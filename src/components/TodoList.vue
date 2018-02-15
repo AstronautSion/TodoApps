@@ -15,7 +15,6 @@
 <script>
 export default {
     props: ['propsdata'],
-    
     methods: {
         removeTodo(todoItem, index){
             this.$emit('removeTodo', todoItem, index);
@@ -39,6 +38,11 @@ li{
     padding:0 0.9rem;
     background:white;
     border-radius:5px;
+}
+.checkBtn{
+    line-height:45px;
+    color:#62acde;
+    margin-right:5px;
 }
 .removeBtn{
     margin-left:auto;
