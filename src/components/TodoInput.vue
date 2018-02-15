@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="inputBox" >
       <input type="text" v-model="newTodoItem" placeholder="할일을 입력해 주세요." v-on:keyup.enter="addTodo">
       <span class="addContainer" v-on:click="addTodo">
           <i class="addBtn fa fa-plus" aira-hidden="true"></i>
@@ -10,23 +10,23 @@
 
 <script>
 export default {
-  data(){
-      return{
-          newTodoItem: ''
-      }
-  },
-  methods: {
-      addTodo() {
-          if(this.newTodoItem !== ""){
-              var value = this.newTodoItem && this.newTodoItem.trim();
-              localStorage.setItem(value, value);
-              this.clearInput();
-          }
-      }
-  },
-  clearInput(){
-      this.newTodoItem="";
-  }
+    data(){
+        return{
+            newTodoItem: ''
+        }
+    },
+    methods: {
+        addTodo() {
+            if(this.newTodoItem !== ""){
+                var value = this.newTodoItem && this.newTodoItem.trim();
+                localStorage.setItem(value, value);
+                this.clearInput();
+            }
+        },
+        clearInput(){
+            this.newTodoItem="";
+        }
+    }
 }
 </script>
 <style scoped>
